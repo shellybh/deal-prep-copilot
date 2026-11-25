@@ -1,0 +1,47 @@
+[
+ {
+  "case": "databricks",
+  "company": "Databricks",
+  "mode": "graph",
+  "language": "he",
+  "meeting_type": "sales",
+  "note": "US, Hebrew briefing over English KB",
+  "status": "completed",
+  "duration_s": 360.4,
+  "llm_calls": 9,
+  "input_tokens": 50006,
+  "output_tokens": 13609,
+  "tavily_credits": 0,
+  "error": null,
+  "stages": {
+   "company_identification": "completed",
+   "internal_research": "completed",
+   "external_research": "completed",
+   "competitor_analysis": "completed",
+   "strategic_analysis": "completed",
+   "briefing_writing": "completed",
+   "quality_checks": "completed"
+  },
+  "sections_missing": [],
+  "judge_removed": 3,
+  "cited_sources": 29,
+  "internal_cited": 7,
+  "rounds": 1,
+  "notes": [],
+  "bullets": 55,
+  "cited_pct": 80,
+  "cited_pct_main": 96,
+  "generic": 4,
+  "generic_runs": [
+   7,
+   4,
+   3
+  ],
+  "generic_items": [
+   "שוק פלטפורמות הנתונים וה-AI מתמקד בהנגשת מידע ארגוני ובאיחוד הנדסת נתונים, אנליטיקה ו-AI תחת ארכיטקטורת Lakehouse אחת. ",
+   "ארגונים מתמודדים עם פערים בהנגשת נתונים בזמן אמת ובחיבור תשתיות מורכבות למשתמשים עסקיים ללא צורך בהנדסת צינורות מורכבת. ",
+   "למה זה חשוב: היכולת להתחבר באופן טבעי ל-Databricks ולנהל טבלאות Delta Lake מאפשרת פריסה מהירה ללא צורך בהנדסת צינורות נתונים מורכבת מחדש.",
+   "למה זה חשוב: צוותים עסקיים מתקשים לעיתים לעבוד ישירות מול פלטפורמות הנדסיות מורכבות, ושילוב דשבורדים מובנים פותר פער זה."
+  ]
+ }
+]

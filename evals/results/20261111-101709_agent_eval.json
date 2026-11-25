@@ -1,0 +1,18 @@
+[
+ {
+  "case": "databricks",
+  "company": "Databricks",
+  "mode": "single",
+  "language": "he",
+  "meeting_type": "sales",
+  "note": "US, Hebrew briefing over English KB",
+  "status": "failed",
+  "error": "GoogleRateLimitError: Error calling model 'gemini-3.5-flash' (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. Fo",
+  "duration_s": 36.0,
+  "bullets": 0,
+  "cited_pct": null,
+  "generic": null,
+  "generic_runs": [],
+  "generic_items": []
+ }
+]

@@ -1,0 +1,30 @@
+[
+ {
+  "case": "databricks",
+  "company": "Databricks",
+  "mode": "single",
+  "language": "he",
+  "meeting_type": "sales",
+  "note": "US, Hebrew briefing over English KB",
+  "status": "completed",
+  "duration_s": 42.3,
+  "llm_calls": null,
+  "tool_calls": 5,
+  "input_tokens": 11688,
+  "output_tokens": 8647,
+  "tavily_credits": null,
+  "identification": "identified on the web (4 relevant sources)",
+  "bullets": 21,
+  "cited_pct": 81,
+  "cited_pct_main": 81,
+  "generic": 1,
+  "generic_runs": [
+   0,
+   1,
+   1
+  ],
+  "generic_items": [
+   "לא נמצאו במקורות עובדות ספציפיות המצביעות על סיכונים ידועים (אירועים, מספרים או החלטות)."
+  ]
+ }
+]

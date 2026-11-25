@@ -1,0 +1,47 @@
+[
+ {
+  "case": "snowflake",
+  "company": "Snowflake",
+  "mode": "graph",
+  "language": "en",
+  "meeting_type": "sales",
+  "note": "US public, our partner in the KB",
+  "status": "completed",
+  "duration_s": 124.6,
+  "llm_calls": 9,
+  "input_tokens": 45784,
+  "output_tokens": 15576,
+  "tavily_credits": 0,
+  "error": null,
+  "stages": {
+   "company_identification": "completed",
+   "internal_research": "completed",
+   "external_research": "completed",
+   "competitor_analysis": "completed",
+   "strategic_analysis": "completed",
+   "briefing_writing": "completed",
+   "quality_checks": "completed"
+  },
+  "sections_missing": [],
+  "judge_removed": 0,
+  "cited_sources": 28,
+  "internal_cited": 13,
+  "rounds": 1,
+  "notes": [],
+  "bullets": 63,
+  "cited_pct": 71,
+  "cited_pct_main": 100,
+  "generic": 4,
+  "generic_runs": [
+   4,
+   3,
+   4
+  ],
+  "generic_items": [
+   "Why it matters: Treating Snowflake as a prospect without past internal deal data requires careful discovery regarding their internal real-time operational analytics stack.",
+   "Rating: Without prior end-customer sales history for Snowflake's internal teams, discovery must uncover their specific internal operations stack and decision criteria.",
+   "Why it matters: Bundled cloud analytics alternatives can compete for internal operational analytics deployments if stakeholders consider default public cloud tools.",
+   "Rating: Internal Snowflake teams operating across public clouds might evaluate bundled public cloud tools like CloudNova or BigQuery for ad-hoc SQL tasks."
+  ]
+ }
+]

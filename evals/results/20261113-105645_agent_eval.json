@@ -1,0 +1,82 @@
+[
+ {
+  "case": "siemens",
+  "company": "Siemens",
+  "mode": "graph",
+  "language": "en",
+  "meeting_type": "partnership",
+  "note": "German: local-language note, similar entities",
+  "status": "completed",
+  "duration_s": 123.2,
+  "llm_calls": 9,
+  "input_tokens": 43233,
+  "output_tokens": 14729,
+  "tavily_credits": 0,
+  "error": null,
+  "stages": {
+   "company_identification": "completed",
+   "internal_research": "completed",
+   "external_research": "completed",
+   "competitor_analysis": "completed",
+   "strategic_analysis": "completed",
+   "briefing_writing": "completed",
+   "quality_checks": "completed"
+  },
+  "sections_missing": [
+   "internal_intelligence"
+  ],
+  "judge_removed": 0,
+  "cited_sources": 25,
+  "internal_cited": 6,
+  "rounds": 1,
+  "notes": [],
+  "bullets": 62,
+  "cited_pct": 92,
+  "cited_pct_main": 98,
+  "generic": 2,
+  "generic_runs": [
+   2,
+   2,
+   2
+  ],
+  "generic_items": [
+   "Industrial automation leaders are increasingly combining physical hardware with software subscriptions, connected grid systems, and AI digital twin applications. ",
+   "Industrial customers in regulated manufacturing sectors demand rigorous OT cybersecurity architectures aligned with multi-stakeholder initiatives like the Charter of Trust. "
+  ]
+ },
+ {
+  "case": "databricks",
+  "company": "Databricks",
+  "mode": "graph",
+  "language": "he",
+  "meeting_type": "sales",
+  "note": "US, Hebrew briefing over English KB",
+  "status": "failed",
+  "duration_s": 57.8,
+  "llm_calls": 7,
+  "input_tokens": 37297,
+  "output_tokens": 5884,
+  "tavily_credits": 0,
+  "error": "GoogleAPIError: 503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+  "stages": {
+   "company_identification": "completed",
+   "internal_research": "completed",
+   "external_research": "completed",
+   "competitor_analysis": "completed",
+   "strategic_analysis": "completed",
+   "briefing_writing": "failed",
+   "quality_checks": "skipped"
+  },
+  "sections_missing": null,
+  "judge_removed": null,
+  "cited_sources": 0,
+  "internal_cited": 0,
+  "rounds": 1,
+  "notes": [],
+  "bullets": 0,
+  "cited_pct": null,
+  "generic": null,
+  "generic_runs": [],
+  "generic_items": []
+ }
+]

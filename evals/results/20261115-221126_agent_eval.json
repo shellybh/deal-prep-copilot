@@ -1,0 +1,44 @@
+[
+ {
+  "case": "snowflake",
+  "company": "Snowflake",
+  "mode": "graph",
+  "language": "en",
+  "meeting_type": "sales",
+  "note": "US public, our partner in the KB",
+  "status": "completed",
+  "duration_s": 80.0,
+  "llm_calls": 10,
+  "input_tokens": 46610,
+  "output_tokens": 15486,
+  "tavily_credits": 0,
+  "error": null,
+  "stages": {
+   "company_identification": "completed",
+   "internal_research": "completed",
+   "external_research": "completed",
+   "competitor_analysis": "completed",
+   "strategic_analysis": "completed",
+   "briefing_writing": "completed",
+   "quality_checks": "completed"
+  },
+  "sections_missing": [],
+  "judge_removed": 0,
+  "cited_sources": 33,
+  "internal_cited": 12,
+  "rounds": 1,
+  "notes": [],
+  "bullets": 63,
+  "cited_pct": 100,
+  "cited_pct_main": 100,
+  "generic": 1,
+  "generic_runs": [
+   1,
+   4,
+   1
+  ],
+  "generic_items": [
+   "Enterprise cloud data warehousing workloads are increasingly augmented by AI services and multi-cloud interoperability across catalogs and engines. "
+  ]
+ }
+]

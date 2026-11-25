@@ -1,0 +1,55 @@
+[
+ {
+  "case": "databricks",
+  "company": "Databricks",
+  "mode": "graph",
+  "language": "he",
+  "meeting_type": "sales",
+  "note": "US, Hebrew briefing over English KB",
+  "status": "partial",
+  "duration_s": 92.1,
+  "llm_calls": 8,
+  "input_tokens": 38192,
+  "output_tokens": 9858,
+  "tavily_credits": 0,
+  "error": null,
+  "stages": {
+   "company_identification": "completed",
+   "internal_research": "completed",
+   "external_research": "completed",
+   "competitor_analysis": "completed",
+   "strategic_analysis": "failed",
+   "briefing_writing": "completed",
+   "quality_checks": "completed"
+  },
+  "sections_missing": [
+   "business_opportunities",
+   "risks_challenges"
+  ],
+  "judge_removed": 3,
+  "cited_sources": 23,
+  "internal_cited": 2,
+  "rounds": 1,
+  "notes": [],
+  "bullets": 39,
+  "cited_pct": 92,
+  "cited_pct_main": 92,
+  "generic": 9,
+  "generic_runs": [
+   5,
+   9,
+   9
+  ],
+  "generic_items": [
+   "מטרת המשתמש היא פגישת מכירה ראשונה לבחינת הזדמנויות עסקיות וחיבור פתרונות NexaStream למערך הדאטה של הלקוח. _(מידע מהמשתמש)_",
+   "הסיכון העיקרי בעסקה הוא המעמד החזק של דאטהבריקס כפלטפורמה ארגונית כוללת והתחרות הרחבה בשוק אנליטיקת הענן.  _(ניתוח AI)_",
+   "שוק פלטפורמות הדאטה וה-AI הארגוני חווה מעבר מואץ לפתרונות בסיסי נתונים Serverless המותאמים לסוכני AI כדוגמת Lakebase. ",
+   "ארגונים גדולים מדגישים את הצורך בממשקי ממשל ובקרה מרכזיים (AI Governance) לניהול צריכת מודלים ארגונית ושיתוף נתונים בפרוטוקולים פתוחים. ",
+   "פגישת מכירה ראשונה שנועדה לבחון הזדמנויות לשילוב פתרונות NexaStream בסביבת הדאטה וה-AI של הלקוח. _(מידע מהמשתמש)_",
+   "יש להדגיש את החיבור הנייטיבי ל-Delta Lake ול-Databricks המאפשר שילוב מהיר ללא נטישת התשתית הקיימת.  _(המלצה)_",
+   "מומלץ להימנע ממצב של היצג כמתחרה ישיר לפלטפורמת ה-Lakehouse של דאטהבריקס, ולהתמקד בפתרון משלים המאיץ ביצועים ומספק לוחות מתווך בזמן אמת.  _(המלצה)_",
+   "כיצד מנוהלת כיום זרימת הנתונים והחיבור בין טבלאות Delta Lake לכלל הכלים והלוחות בארגון?  _(המלצה)_",
+   "תיאום פגישת הדגמה טכנית (Demo) להצגת האינטגרציה הנייטיבית בין NexaStream Core ל-Delta Lake ו-Databricks.  _(המלצה)_"
+  ]
+ }
+]

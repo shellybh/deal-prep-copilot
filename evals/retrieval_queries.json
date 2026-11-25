@@ -1,0 +1,20 @@
+[
+  {"id": "en-01", "lang": "en", "query": "What is the head-to-head win rate against CloudNova?", "expected_file": "battlecard_cloudnova.md", "answer_contains": "58%"},
+  {"id": "en-02", "lang": "en", "query": "How do we beat QuantaLake on total cost of ownership?", "expected_file": "battlecard_quantalake.md", "answer_contains": "TCO"},
+  {"id": "en-03", "lang": "en", "query": "What is the Enterprise tier list price?", "expected_file": "pricing_enterprise_Q4_2026.md", "answer_contains": "$14,500/month"},
+  {"id": "en-04", "lang": "en", "query": "Is monthly billing available, and what does it cost?", "expected_file": "pricing_enterprise_Q4_2026.md", "answer_contains": "15% premium"},
+  {"id": "en-05", "lang": "en", "query": "Who must approve a discount above 30%?", "expected_file": "pricing_volume_discount_rules.md", "answer_contains": "Deal Desk Committee + CFO"},
+  {"id": "en-06", "lang": "en", "query": "How long did Apex Financial take to reach production?", "expected_file": "casestudy_apex_financial.md", "answer_contains": "41 days"},
+  {"id": "en-07", "lang": "en", "query": "How should a rep answer the objection that implementation will take too long?", "expected_file": "playbook_objection_handling.md", "answer_contains": "Implementation will take too long"},
+  {"id": "en-08", "lang": "en", "query": "What happens when a customer exceeds the API call quota?", "expected_file": "pricing_api_usage_limits_2026.md", "answer_contains": "grace"},
+  {"id": "en-09", "lang": "en", "query": "Does NexaStream integrate with Snowflake?", "expected_file": "product_spec_integrations_security.md", "answer_contains": "Snowflake"},
+  {"id": "en-10", "lang": "en", "query": "Which healthcare deals did we lose?", "expected_file": "crm_historical_win_loss_data_2025_2026.csv", "answer_contains": "Healthcare"},
+  {"id": "he-01", "lang": "he", "query": "מה אחוז הניצחונות שלנו מול InsightForge?", "expected_file": "battlecard_insightforge.md", "answer_contains": "71%"},
+  {"id": "he-02", "lang": "he", "query": "כמה זמן לוקח להגיע לפרודקשן בתוכנית FastTrack 45?", "expected_file": "playbook_implementation_fasttrack.md", "answer_contains": "45"},
+  {"id": "he-03", "lang": "he", "query": "מה זמן התגובה לתקלת P1 בחבילת Enterprise?", "expected_file": "pricing_enterprise_Q4_2026.md", "answer_contains": "1-hour P1"},
+  {"id": "he-04", "lang": "he", "query": "איך MeridianHealth שיפרו את זמני ההמתנה במיון?", "expected_file": "casestudy_meridianhealth.md", "answer_contains": "68 minutes"},
+  {"id": "he-05", "lang": "he", "query": "מה החולשות של DataSphere בתחום הסטרימינג?", "expected_file": "battlecard_data_sphere.md", "answer_contains": "No streaming"},
+  {"id": "he-06", "lang": "he", "query": "באילו אזורים אפשר לאחסן את הנתונים (data residency)?", "expected_file": "product_spec_integrations_security.md", "answer_contains": "Data Residency"},
+  {"id": "he-07", "lang": "he", "query": "מה התוצאות של Vantage Logistics בעמידה בזמני משלוח?", "expected_file": "casestudy_vantage_logistics.md", "answer_contains": "87%"},
+  {"id": "he-08", "lang": "he", "query": "מה חדש בגרסה 4.2 של Pulse?", "expected_file": "product_spec_realtime_dashboard.md", "answer_contains": "4.2"}
+]

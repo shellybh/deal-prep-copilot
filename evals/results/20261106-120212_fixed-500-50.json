@@ -1,0 +1,870 @@
+{
+  "label": "fixed-500-50",
+  "k": 5,
+  "date": "2026-11-06T12:01:55",
+  "modes": {
+    "hybrid": {
+      "all": {
+        "n": 18,
+        "hit@1": 0.889,
+        "hit@5": 1.0,
+        "MRR@5": 0.931,
+        "answer@5": 0.944
+      },
+      "en": {
+        "n": 10,
+        "hit@1": 0.8,
+        "hit@5": 1.0,
+        "MRR@5": 0.875,
+        "answer@5": 0.9
+      },
+      "he": {
+        "n": 8,
+        "hit@1": 1.0,
+        "hit@5": 1.0,
+        "MRR@5": 1.0,
+        "answer@5": 1.0
+      }
+    },
+    "semantic": {
+      "all": {
+        "n": 18,
+        "hit@1": 0.889,
+        "hit@5": 1.0,
+        "MRR@5": 0.935,
+        "answer@5": 1.0
+      },
+      "en": {
+        "n": 10,
+        "hit@1": 0.9,
+        "hit@5": 1.0,
+        "MRR@5": 0.95,
+        "answer@5": 1.0
+      },
+      "he": {
+        "n": 8,
+        "hit@1": 0.875,
+        "hit@5": 1.0,
+        "MRR@5": 0.917,
+        "answer@5": 1.0
+      }
+    },
+    "keyword": {
+      "all": {
+        "n": 18,
+        "hit@1": 0.667,
+        "hit@5": 0.833,
+        "MRR@5": 0.727,
+        "answer@5": 0.556
+      },
+      "en": {
+        "n": 10,
+        "hit@1": 0.6,
+        "hit@5": 0.7,
+        "MRR@5": 0.633,
+        "answer@5": 0.5
+      },
+      "he": {
+        "n": 8,
+        "hit@1": 0.75,
+        "hit@5": 1.0,
+        "MRR@5": 0.844,
+        "answer@5": 0.625
+      }
+    }
+  },
+  "per_query": {
+    "en-01": {
+      "hybrid": {
+        "id": "en-01",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "battlecard_cloudnova.md § Competitive Battle Card: CloudNova Analytics > Competitor Snapshot",
+          "battlecard_cloudnova.md § Competitive Battle Card: CloudNova Analytics > Landmines (Questions to Ask the Prospect)",
+          "battlecard_cloudnova.md § Competitive Battle Card: CloudNova Analytics > Competitor Snapshot"
+        ]
+      },
+      "semantic": {
+        "id": "en-01",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "battlecard_cloudnova.md § Competitive Battle Card: CloudNova Analytics > Competitor Snapshot",
+          "battlecard_cloudnova.md § Competitive Battle Card: CloudNova Analytics > Our Strengths",
+          "battlecard_cloudnova.md § Competitive Battle Card: CloudNova Analytics > Proof Points"
+        ]
+      },
+      "keyword": {
+        "id": "en-01",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": false,
+        "top": [
+          "battlecard_cloudnova.md § Competitive Battle Card: CloudNova Analytics > Landmines (Questions to Ask the Prospect)",
+          "casestudy_lumos_retail.md § Case Study: Lumos Retail Group > The Challenge",
+          "playbook_objection_handling.md § Sales Playbook: Objection Handling (Cost & Implementation) > Objection 6: \"Now isn't the right time.\""
+        ]
+      }
+    },
+    "en-02": {
+      "hybrid": {
+        "id": "en-02",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "battlecard_quantalake.md § Competitive Battle Card: QuantaLake > Landmines",
+          "battlecard_quantalake.md § Competitive Battle Card: QuantaLake > Competitor Snapshot",
+          "battlecard_quantalake.md § Competitive Battle Card: QuantaLake > Competitor Snapshot"
+        ]
+      },
+      "semantic": {
+        "id": "en-02",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "battlecard_quantalake.md § Competitive Battle Card: QuantaLake > Pricing / TCO Comparison (3-Year, Mid-Market Retailer)",
+          "battlecard_quantalake.md § Competitive Battle Card: QuantaLake > Pricing / TCO Comparison (3-Year, Mid-Market Retailer)",
+          "battlecard_quantalake.md § Competitive Battle Card: QuantaLake > Their Strengths"
+        ]
+      },
+      "keyword": {
+        "id": "en-02",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "battlecard_quantalake.md § Competitive Battle Card: QuantaLake > Landmines",
+          "playbook_implementation_fasttrack.md § Sales Playbook: Selling Implementation Confidence with FastTrack 45 > How to Position It (Talk Track)",
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere > Landmines"
+        ]
+      }
+    },
+    "en-03": {
+      "hybrid": {
+        "id": "en-03",
+        "lang": "en",
+        "rank": 2,
+        "hit1": false,
+        "hit5": true,
+        "rr": 0.5,
+        "answer5": true,
+        "top": [
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Landmines",
+          "pricing_enterprise_Q4_2026.md § NexaStream Pricing & Packaging Guide: Q4 2026 > Core Tiers at a Glance",
+          "casestudy_lumos_retail.md § Case Study: Lumos Retail Group > The Challenge"
+        ]
+      },
+      "semantic": {
+        "id": "en-03",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "pricing_enterprise_Q4_2026.md § NexaStream Pricing & Packaging Guide: Q4 2026 > Core Tiers at a Glance",
+          "pricing_volume_discount_rules.md § Volume Discounting & Approval Matrix (FY2026) > Standard Volume Discount Bands (Enterprise)",
+          "pricing_volume_discount_rules.md § Volume Discounting & Approval Matrix (FY2026) > Seat & Consumption Volume Rules"
+        ]
+      },
+      "keyword": {
+        "id": "en-03",
+        "lang": "en",
+        "rank": null,
+        "hit1": false,
+        "hit5": false,
+        "rr": 0.0,
+        "answer5": false,
+        "top": [
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Landmines",
+          "casestudy_lumos_retail.md § Case Study: Lumos Retail Group > The Challenge",
+          "playbook_implementation_fasttrack.md § Sales Playbook: Selling Implementation Confidence with FastTrack 45 > Use the Mutual Action Plan (MAP)"
+        ]
+      }
+    },
+    "en-04": {
+      "hybrid": {
+        "id": "en-04",
+        "lang": "en",
+        "rank": 4,
+        "hit1": false,
+        "hit5": true,
+        "rr": 0.25,
+        "answer5": true,
+        "top": [
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Landmines",
+          "pricing_api_usage_limits_2026.md § NexaStream API Usage Limits & Overage Policy (2026) > Overage Pricing",
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere"
+        ]
+      },
+      "semantic": {
+        "id": "en-04",
+        "lang": "en",
+        "rank": 2,
+        "hit1": false,
+        "hit5": true,
+        "rr": 0.5,
+        "answer5": true,
+        "top": [
+          "pricing_api_usage_limits_2026.md § NexaStream API Usage Limits & Overage Policy (2026) > Overage Pricing",
+          "pricing_enterprise_Q4_2026.md § NexaStream Pricing & Packaging Guide: Q4 2026",
+          "pricing_api_usage_limits_2026.md § NexaStream API Usage Limits & Overage Policy (2026) > API Capacity Packs (Pre-Purchased, Discounted)"
+        ]
+      },
+      "keyword": {
+        "id": "en-04",
+        "lang": "en",
+        "rank": null,
+        "hit1": false,
+        "hit5": false,
+        "rr": 0.0,
+        "answer5": false,
+        "top": [
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Landmines",
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere",
+          "product_spec_integrations_security.md § Product Spec Sheet: NexaStream Core Platform, Integrations & Security Compliance > Platform Overview"
+        ]
+      }
+    },
+    "en-05": {
+      "hybrid": {
+        "id": "en-05",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "pricing_volume_discount_rules.md § Volume Discounting & Approval Matrix (FY2026) > Discount Approval Matrix",
+          "pricing_volume_discount_rules.md § Volume Discounting & Approval Matrix (FY2026) > Guiding Principles",
+          "pricing_volume_discount_rules.md § Volume Discounting & Approval Matrix (FY2026) > Standard Volume Discount Bands (Enterprise)"
+        ]
+      },
+      "semantic": {
+        "id": "en-05",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "pricing_volume_discount_rules.md § Volume Discounting & Approval Matrix (FY2026) > Discount Approval Matrix",
+          "pricing_volume_discount_rules.md § Volume Discounting & Approval Matrix (FY2026) > Prohibited Practices",
+          "pricing_volume_discount_rules.md § Volume Discounting & Approval Matrix (FY2026)"
+        ]
+      },
+      "keyword": {
+        "id": "en-05",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "pricing_volume_discount_rules.md § Volume Discounting & Approval Matrix (FY2026) > Discount Approval Matrix",
+          "pricing_volume_discount_rules.md § Volume Discounting & Approval Matrix (FY2026) > Guiding Principles",
+          "pricing_volume_discount_rules.md § Volume Discounting & Approval Matrix (FY2026) > Standard Volume Discount Bands (Enterprise)"
+        ]
+      }
+    },
+    "en-06": {
+      "hybrid": {
+        "id": "en-06",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "casestudy_apex_financial.md § Case Study: Apex Financial Group > The Challenge",
+          "casestudy_apex_financial.md § Case Study: Apex Financial Group > Results (First 12 Months)",
+          "casestudy_apex_financial.md § Case Study: Apex Financial Group > Why We Won"
+        ]
+      },
+      "semantic": {
+        "id": "en-06",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "casestudy_apex_financial.md § Case Study: Apex Financial Group > The NexaStream Solution",
+          "casestudy_apex_financial.md § Case Study: Apex Financial Group > Why We Won",
+          "casestudy_apex_financial.md § Case Study: Apex Financial Group > The Challenge"
+        ]
+      },
+      "keyword": {
+        "id": "en-06",
+        "lang": "en",
+        "rank": 3,
+        "hit1": false,
+        "hit5": true,
+        "rr": 0.3333333333333333,
+        "answer5": false,
+        "top": [
+          "battlecard_cloudnova.md § Competitive Battle Card: CloudNova Analytics > Landmines (Questions to Ask the Prospect)",
+          "battlecard_quantalake.md § Competitive Battle Card: QuantaLake > Landmines",
+          "casestudy_apex_financial.md § Case Study: Apex Financial Group > The Challenge"
+        ]
+      }
+    },
+    "en-07": {
+      "hybrid": {
+        "id": "en-07",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "playbook_objection_handling.md § Sales Playbook: Objection Handling (Cost & Implementation) > Objection 1: \"NexaStream is too expensive.\"",
+          "playbook_objection_handling.md § Sales Playbook: Objection Handling (Cost & Implementation) > Objection 2: \"Implementation will take too long.\"",
+          "playbook_objection_handling.md § Sales Playbook: Objection Handling (Cost & Implementation) > Objection 2: \"Implementation will take too long.\""
+        ]
+      },
+      "semantic": {
+        "id": "en-07",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "playbook_objection_handling.md § Sales Playbook: Objection Handling (Cost & Implementation) > Objection 2: \"Implementation will take too long.\"",
+          "playbook_objection_handling.md § Sales Playbook: Objection Handling (Cost & Implementation) > Objection 2: \"Implementation will take too long.\"",
+          "playbook_objection_handling.md § Sales Playbook: Objection Handling (Cost & Implementation) > Objection 1: \"NexaStream is too expensive.\""
+        ]
+      },
+      "keyword": {
+        "id": "en-07",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "playbook_objection_handling.md § Sales Playbook: Objection Handling (Cost & Implementation) > Objection 1: \"NexaStream is too expensive.\"",
+          "playbook_objection_handling.md § Sales Playbook: Objection Handling (Cost & Implementation) > The LAER Framework",
+          "playbook_objection_handling.md § Sales Playbook: Objection Handling (Cost & Implementation) > Objection 3: \"We don't have the internal resources.\""
+        ]
+      }
+    },
+    "en-08": {
+      "hybrid": {
+        "id": "en-08",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": false,
+        "top": [
+          "pricing_api_usage_limits_2026.md § NexaStream API Usage Limits & Overage Policy (2026) > Purpose",
+          "pricing_api_usage_limits_2026.md § NexaStream API Usage Limits & Overage Policy (2026) > What Counts as an API Call",
+          "pricing_api_usage_limits_2026.md § NexaStream API Usage Limits & Overage Policy (2026) > Limits by Tier"
+        ]
+      },
+      "semantic": {
+        "id": "en-08",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "pricing_api_usage_limits_2026.md § NexaStream API Usage Limits & Overage Policy (2026) > Limits by Tier",
+          "pricing_api_usage_limits_2026.md § NexaStream API Usage Limits & Overage Policy (2026) > Purpose",
+          "pricing_api_usage_limits_2026.md § NexaStream API Usage Limits & Overage Policy (2026) > What Counts as an API Call"
+        ]
+      },
+      "keyword": {
+        "id": "en-08",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": false,
+        "top": [
+          "pricing_api_usage_limits_2026.md § NexaStream API Usage Limits & Overage Policy (2026) > Purpose",
+          "battlecard_cloudnova.md § Competitive Battle Card: CloudNova Analytics > Landmines (Questions to Ask the Prospect)",
+          "pricing_api_usage_limits_2026.md § NexaStream API Usage Limits & Overage Policy (2026) > What Counts as an API Call"
+        ]
+      }
+    },
+    "en-09": {
+      "hybrid": {
+        "id": "en-09",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "product_spec_integrations_security.md § Product Spec Sheet: NexaStream Core Platform, Integrations & Security Compliance > Featured Integrations > Snowflake",
+          "casestudy_apex_financial.md § Case Study: Apex Financial Group > The NexaStream Solution",
+          "casestudy_lumos_retail.md § Case Study: Lumos Retail Group > The NexaStream Solution"
+        ]
+      },
+      "semantic": {
+        "id": "en-09",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "product_spec_integrations_security.md § Product Spec Sheet: NexaStream Core Platform, Integrations & Security Compliance > Featured Integrations > Snowflake",
+          "product_spec_integrations_security.md § Product Spec Sheet: NexaStream Core Platform, Integrations & Security Compliance > Featured Integrations > Other Notable Connectors (300+ total)",
+          "casestudy_apex_financial.md § Case Study: Apex Financial Group > The NexaStream Solution"
+        ]
+      },
+      "keyword": {
+        "id": "en-09",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "product_spec_integrations_security.md § Product Spec Sheet: NexaStream Core Platform, Integrations & Security Compliance > Featured Integrations > Snowflake",
+          "casestudy_apex_financial.md § Case Study: Apex Financial Group > The NexaStream Solution",
+          "casestudy_meridianhealth.md § Case Study: MeridianHealth Systems > The NexaStream Solution"
+        ]
+      }
+    },
+    "en-10": {
+      "hybrid": {
+        "id": "en-10",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "crm_historical_win_loss_data_2025_2026.csv § rows 21-30",
+          "casestudy_meridianhealth.md § Case Study: MeridianHealth Systems > Why We Won",
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Competitor Snapshot"
+        ]
+      },
+      "semantic": {
+        "id": "en-10",
+        "lang": "en",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "crm_historical_win_loss_data_2025_2026.csv § rows 21-30",
+          "crm_historical_win_loss_data_2025_2026.csv § rows 11-20",
+          "crm_historical_win_loss_data_2025_2026.csv § rows 1-10"
+        ]
+      },
+      "keyword": {
+        "id": "en-10",
+        "lang": "en",
+        "rank": null,
+        "hit1": false,
+        "hit5": false,
+        "rr": 0.0,
+        "answer5": true,
+        "top": [
+          "playbook_objection_handling.md § Sales Playbook: Objection Handling (Cost & Implementation) > Objection 3: \"We don't have the internal resources.\"",
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere > Landmines",
+          "casestudy_apex_financial.md § Case Study: Apex Financial Group > Why We Won"
+        ]
+      }
+    },
+    "he-01": {
+      "hybrid": {
+        "id": "he-01",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Their Weaknesses / Our Strengths",
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Their Weaknesses / Our Strengths",
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Pricing Comparison"
+        ]
+      },
+      "semantic": {
+        "id": "he-01",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Competitor Snapshot",
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Their Strengths",
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Their Weaknesses / Our Strengths"
+        ]
+      },
+      "keyword": {
+        "id": "he-01",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": false,
+        "top": [
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Their Weaknesses / Our Strengths",
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Their Weaknesses / Our Strengths",
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Pricing Comparison"
+        ]
+      }
+    },
+    "he-02": {
+      "hybrid": {
+        "id": "he-02",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "playbook_implementation_fasttrack.md § Sales Playbook: Selling Implementation Confidence with FastTrack 45 > FastTrack 45: Program Details",
+          "playbook_implementation_fasttrack.md § Sales Playbook: Selling Implementation Confidence with FastTrack 45 > FastTrack 45: Program Details",
+          "playbook_implementation_fasttrack.md § Sales Playbook: Selling Implementation Confidence with FastTrack 45 > Onboarding Programs by Tier"
+        ]
+      },
+      "semantic": {
+        "id": "he-02",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "playbook_implementation_fasttrack.md § Sales Playbook: Selling Implementation Confidence with FastTrack 45 > FastTrack 45: Program Details",
+          "playbook_implementation_fasttrack.md § Sales Playbook: Selling Implementation Confidence with FastTrack 45 > FastTrack 45: Program Details",
+          "playbook_implementation_fasttrack.md § Sales Playbook: Selling Implementation Confidence with FastTrack 45 > The 45-Day Timeline"
+        ]
+      },
+      "keyword": {
+        "id": "he-02",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "playbook_implementation_fasttrack.md § Sales Playbook: Selling Implementation Confidence with FastTrack 45 > FastTrack 45: Program Details",
+          "playbook_implementation_fasttrack.md § Sales Playbook: Selling Implementation Confidence with FastTrack 45 > Onboarding Programs by Tier",
+          "playbook_implementation_fasttrack.md § Sales Playbook: Selling Implementation Confidence with FastTrack 45 > FastTrack 45: Program Details"
+        ]
+      }
+    },
+    "he-03": {
+      "hybrid": {
+        "id": "he-03",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "pricing_enterprise_Q4_2026.md § NexaStream Pricing & Packaging Guide: Q4 2026 > Core Tiers at a Glance",
+          "product_spec_integrations_security.md § Product Spec Sheet: NexaStream Core Platform, Integrations & Security Compliance > Reliability",
+          "pricing_volume_discount_rules.md § Volume Discounting & Approval Matrix (FY2026) > Standard Volume Discount Bands (Enterprise)"
+        ]
+      },
+      "semantic": {
+        "id": "he-03",
+        "lang": "he",
+        "rank": 3,
+        "hit1": false,
+        "hit5": true,
+        "rr": 0.3333333333333333,
+        "answer5": true,
+        "top": [
+          "playbook_implementation_fasttrack.md § Sales Playbook: Selling Implementation Confidence with FastTrack 45 > Onboarding Programs by Tier",
+          "product_spec_integrations_security.md § Product Spec Sheet: NexaStream Core Platform, Integrations & Security Compliance > Reliability",
+          "pricing_enterprise_Q4_2026.md § NexaStream Pricing & Packaging Guide: Q4 2026 > Core Tiers at a Glance"
+        ]
+      },
+      "keyword": {
+        "id": "he-03",
+        "lang": "he",
+        "rank": 4,
+        "hit1": false,
+        "hit5": true,
+        "rr": 0.25,
+        "answer5": true,
+        "top": [
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere > Their Weaknesses / Our Strengths",
+          "battlecard_quantalake.md § Competitive Battle Card: QuantaLake > Their Weaknesses / Our Strengths",
+          "pricing_api_usage_limits_2026.md § NexaStream API Usage Limits & Overage Policy (2026) > Historical Note"
+        ]
+      }
+    },
+    "he-04": {
+      "hybrid": {
+        "id": "he-04",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "casestudy_meridianhealth.md § Case Study: MeridianHealth Systems > The Challenge",
+          "casestudy_meridianhealth.md § Case Study: MeridianHealth Systems > Results (First 12 Months)",
+          "casestudy_meridianhealth.md § Case Study: MeridianHealth Systems > The NexaStream Solution"
+        ]
+      },
+      "semantic": {
+        "id": "he-04",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "casestudy_meridianhealth.md § Case Study: MeridianHealth Systems > The Challenge",
+          "casestudy_meridianhealth.md § Case Study: MeridianHealth Systems > Results (First 12 Months)",
+          "casestudy_meridianhealth.md § Case Study: MeridianHealth Systems > The NexaStream Solution"
+        ]
+      },
+      "keyword": {
+        "id": "he-04",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": false,
+        "top": [
+          "casestudy_meridianhealth.md § Case Study: MeridianHealth Systems",
+          "casestudy_meridianhealth.md § Case Study: MeridianHealth Systems > The Challenge",
+          "casestudy_meridianhealth.md § Case Study: MeridianHealth Systems > The NexaStream Solution"
+        ]
+      }
+    },
+    "he-05": {
+      "hybrid": {
+        "id": "he-05",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere > Their Weaknesses / Our Strengths",
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere > Their Weaknesses / Our Strengths",
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere > Landmines"
+        ]
+      },
+      "semantic": {
+        "id": "he-05",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere > Their Weaknesses / Our Strengths",
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere > Their Weaknesses / Our Strengths",
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere > Pricing Comparison (Example: 40 Creators + 1,200 Viewers)"
+        ]
+      },
+      "keyword": {
+        "id": "he-05",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere",
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere > Landmines",
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere > Competitor Snapshot"
+        ]
+      }
+    },
+    "he-06": {
+      "hybrid": {
+        "id": "he-06",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "product_spec_integrations_security.md § Product Spec Sheet: NexaStream Core Platform, Integrations & Security Compliance > Data Residency Regions",
+          "product_spec_integrations_security.md § Product Spec Sheet: NexaStream Core Platform, Integrations & Security Compliance > Platform Overview",
+          "pricing_enterprise_Q4_2026.md § NexaStream Pricing & Packaging Guide: Q4 2026 > Add-Ons"
+        ]
+      },
+      "semantic": {
+        "id": "he-06",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "product_spec_integrations_security.md § Product Spec Sheet: NexaStream Core Platform, Integrations & Security Compliance > Data Residency Regions",
+          "product_spec_integrations_security.md § Product Spec Sheet: NexaStream Core Platform, Integrations & Security Compliance > Platform Overview",
+          "pricing_enterprise_Q4_2026.md § NexaStream Pricing & Packaging Guide: Q4 2026 > Add-Ons"
+        ]
+      },
+      "keyword": {
+        "id": "he-06",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "product_spec_integrations_security.md § Product Spec Sheet: NexaStream Core Platform, Integrations & Security Compliance > Data Residency Regions",
+          "battlecard_cloudnova.md § Competitive Battle Card: CloudNova Analytics > Landmines (Questions to Ask the Prospect)",
+          "battlecard_data_sphere.md § Competitive Battle Card: DataSphere > Landmines"
+        ]
+      }
+    },
+    "he-07": {
+      "hybrid": {
+        "id": "he-07",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "casestudy_vantage_logistics.md § Case Study: Vantage Logistics > Customer Profile",
+          "casestudy_vantage_logistics.md § Case Study: Vantage Logistics > Results (First 4 Months, Annualized)",
+          "casestudy_vantage_logistics.md § Case Study: Vantage Logistics"
+        ]
+      },
+      "semantic": {
+        "id": "he-07",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "casestudy_vantage_logistics.md § Case Study: Vantage Logistics > The NexaStream Solution",
+          "casestudy_vantage_logistics.md § Case Study: Vantage Logistics > The Challenge",
+          "casestudy_vantage_logistics.md § Case Study: Vantage Logistics > Why We Won"
+        ]
+      },
+      "keyword": {
+        "id": "he-07",
+        "lang": "he",
+        "rank": 2,
+        "hit1": false,
+        "hit5": true,
+        "rr": 0.5,
+        "answer5": false,
+        "top": [
+          "battlecard_insightforge.md § Competitive Battle Card: InsightForge > Positioning Guidance",
+          "casestudy_vantage_logistics.md § Case Study: Vantage Logistics",
+          "casestudy_vantage_logistics.md § Case Study: Vantage Logistics > Customer Profile"
+        ]
+      }
+    },
+    "he-08": {
+      "hybrid": {
+        "id": "he-08",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "product_spec_realtime_dashboard.md § Product Spec Sheet: NexaStream Pulse (Real-Time Dashboards) > What's New in Pulse 4.2 (September 2026)",
+          "product_spec_realtime_dashboard.md § Product Spec Sheet: NexaStream Pulse (Real-Time Dashboards) > Key Features",
+          "product_spec_realtime_dashboard.md § Product Spec Sheet: NexaStream Pulse (Real-Time Dashboards) > Product Summary"
+        ]
+      },
+      "semantic": {
+        "id": "he-08",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "product_spec_realtime_dashboard.md § Product Spec Sheet: NexaStream Pulse (Real-Time Dashboards) > What's New in Pulse 4.2 (September 2026)",
+          "product_spec_realtime_dashboard.md § Product Spec Sheet: NexaStream Pulse (Real-Time Dashboards) > Key Features",
+          "product_spec_realtime_dashboard.md § Product Spec Sheet: NexaStream Pulse (Real-Time Dashboards) > Streaming Sources Supported"
+        ]
+      },
+      "keyword": {
+        "id": "he-08",
+        "lang": "he",
+        "rank": 1,
+        "hit1": true,
+        "hit5": true,
+        "rr": 1.0,
+        "answer5": true,
+        "top": [
+          "product_spec_realtime_dashboard.md § Product Spec Sheet: NexaStream Pulse (Real-Time Dashboards) > What's New in Pulse 4.2 (September 2026)",
+          "product_spec_realtime_dashboard.md § Product Spec Sheet: NexaStream Pulse (Real-Time Dashboards)",
+          "product_spec_realtime_dashboard.md § Product Spec Sheet: NexaStream Pulse (Real-Time Dashboards) > Product Summary"
+        ]
+      }
+    }
+  }
+}

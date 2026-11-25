@@ -1,0 +1,36 @@
+name: Supabase keepalive
+
+# Supabase pauses Free-plan projects after about a week with too little database
+# activity. A paused project breaks the public demo (the sample briefings are read
+# from the database). This workflow runs one small read-only query twice a week.
+on:
+  schedule:
+    - cron: "0 6 * * 1,4" # Monday and Thursday, 06:00 UTC
+  workflow_dispatch: # run by hand from the Actions tab to test it
+
+permissions: {} # needs no access to the repository
+
+jobs:
+  ping:
+    name: Query the database
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # demo_runs_today() only reads today's demo counter (service_role only).
+      # Secrets SUPABASE_URL and SUPABASE_KEY are set in the repo settings.
+      - name: Call demo_runs_today()
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_KEY" ]; then
+            echo "::error::Secrets SUPABASE_URL / SUPABASE_KEY are not set"
+            exit 1
+          fi
+          curl -sS --fail-with-body --retry 3 --retry-delay 30 --retry-all-errors \
+            -X POST "$SUPABASE_URL/rest/v1/rpc/demo_runs_today" \
+            -H "apikey: $SUPABASE_KEY" \
+            -H "Content-Type: application/json" \
+            -d '{}' \
+            -o response.txt -w "HTTP %{http_code}\n"
+          echo "Live demo runs today: $(cat response.txt)"

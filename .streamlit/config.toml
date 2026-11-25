@@ -1,0 +1,11 @@
+# Streamlit settings (Phase 6). No secrets here: they go in Streamlit Cloud > App settings > Secrets
+# (or .streamlit/secrets.toml locally, which is git-ignored).
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false
+
+[theme]
+base = "light"
+primaryColor = "#2f5d8a"

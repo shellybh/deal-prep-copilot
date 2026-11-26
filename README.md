@@ -46,10 +46,10 @@ The briefing labels every item: fact, internal document, user-provided, AI analy
 ## Architecture
 
 ```mermaid
-flowchart LR
+flowchart TB
     UI["Streamlit UI<br/>demo mode: samples, access code, daily cap"] --> G
 
-    subgraph G["LangGraph run (orchestrator)"]
+    subgraph G["LangGraph orchestrator"]
         direction LR
         I[Identify company] --> R[Research Agent]
         R --> C{Complete?}
@@ -59,9 +59,9 @@ flowchart LR
         W --> Q[Quality checks<br/>+ generic judge]
     end
 
-    R <--> KB[("Supabase<br/>pgvector + FTS<br/>hybrid_search")]
-    R <--> T["Tavily<br/>web + news"]
-    A & W & R & Q <--> LLM["Gemini<br/>flash / flash-lite"]
+    G <--> KB[("Supabase<br/>pgvector + FTS hybrid_search<br/><i>Research Agent</i>")]
+    G <--> T["Tavily web + news<br/><i>Research Agent</i>"]
+    G <--> LLM["Gemini flash / flash-lite<br/><i>all agent steps</i>"]
     G --> DB[("Supabase<br/>runs, stages, briefings,<br/>sources, claims, usage")]
 ```
 

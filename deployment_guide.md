@@ -13,7 +13,7 @@ How the public demo of Deal-Prep Copilot is deployed and run (Phase 6, D39 §4).
 | Visitor | What they can do | Quota used |
 |---|---|---|
 | No access code | Read the sample briefings (`briefings.is_sample = true`) in the sidebar; the newest one opens on the first screen | none |
-| With the access code | Run a live research run, see all recent briefings | ~2 Gemini flash calls + up to 20 Tavily credits (Standard depth, D37) per run |
+| With the access code | Run a live research run, see the briefings from their own session | ~2 Gemini flash calls + up to 20 Tavily credits (Standard depth, D37) per run |
 
 - **Access code:** `DEMO_ACCESS_CODE`. Compared in constant time, kept for the browser session after one correct entry.
 - **Daily cap:** `DEMO_DAILY_CAP` live runs per day for the whole site (default 4), counted in the Supabase table `demo_usage` by `claim_demo_run(cap)` (atomic, so parallel visitors can't go over the cap). The day is the **Pacific date**, so the cap resets with the Gemini quota at midnight Pacific (10:00 Israel time in winter). A run is counted when it starts, even if it fails later.
@@ -77,4 +77,4 @@ How the public demo of Deal-Prep Copilot is deployed and run (Phase 6, D39 §4).
 
 - The service key is only in Secrets and in the local `.env`; both are outside git (`.env`, `.streamlit/secrets.toml` are in `.gitignore`).
 - The UI doesn't use Supabase Auth (D39 §3). Visitors never get a database token; all queries run server-side.
-- Public visitors only see briefings marked as samples. Briefings from live runs are listed only for code holders.
+- Public visitors only see briefings marked as samples. A code holder also sees the briefings of their own session's runs, never other visitors' runs.

@@ -4,7 +4,9 @@
 
 An AI research assistant for B2B meetings. You give it a company name and the meeting type, and about three minutes later you get a briefing in Hebrew or English. It has a one-page summary and a 12-section appendix, and every fact points to a source: either a web page or a document from the seller's own knowledge base.
 
-**Live demo:** _link added after the deploy_. Sample briefings open without an access code. Live runs need one (ask me), because the demo runs on free-tier quotas.
+**Live demo:** [deal-prep-copilot.streamlit.app](https://deal-prep-copilot.streamlit.app/). Sample briefings open without an access code. Live runs need one (ask me), because the demo runs on free-tier quotas.
+
+![Browsing the sample briefings: English, then Hebrew (right-to-left), then the glossary](docs/images/demo.gif)
 
 > **Where it started.** This began as a demo project in an AI developer course. The course supplied the initial idea, the initial prompt, and the demo dataset: NexaStream's internal documents, the competitor battle cards and the CRM export. I designed and wrote the architecture, the agents, the research and RAG pipelines, the evaluation, the demo mode and all the decisions in [`DECISIONS.md`](DECISIONS.md).
 
@@ -26,6 +28,20 @@ An AI research assistant for B2B meetings. You give it a company name and the me
    - a small-model judge removes generic statements ("the market is competitive")
 
 The briefing labels every item: fact, internal document, user-provided, AI analysis or AI recommendation, plus low confidence and conflicting sources. Gaps go under *Missing information* instead of being filled in.
+
+## Screenshots
+
+**The form and the sample briefings.** Visitors without an access code see the samples; a code holder also sees the briefings from their own session.
+
+![The home page: meeting form, demo scenario and the sample briefings in the sidebar](docs/images/home.png)
+
+**An English briefing.** A one-page summary, then the 12-section appendix. Every line ends with its sources, and analysis is labeled as such.
+
+![An English sample briefing for a strategic partnership meeting with Snowflake](docs/images/briefing-en.png)
+
+**A Hebrew briefing, right-to-left.** Meeting strategy, recommended questions and next steps, each marked as a recommendation and cited.
+
+![A Hebrew sample briefing, rendered right-to-left: meeting strategy, questions and next steps](docs/images/briefing-he.png)
 
 ## Architecture
 

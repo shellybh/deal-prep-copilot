@@ -53,7 +53,9 @@ def get_store():
         from app.agents.store import SupabaseRunStore
         return SupabaseRunStore(), None
     except Exception as exc:  # missing keys, network
-        return None, f"{type(exc).__name__}: {str(exc)[:150]}"
+        error = f"{type(exc).__name__}: {str(exc)[:150]}"
+        view.log.warning("Supabase store unavailable: %s", error)   # once per process (cached), no key values
+        return None, error
 
 
 def show_message(msg: view.Message | None) -> None:
@@ -170,35 +172,57 @@ if submitted:
                 show_message(view.error_message(exc))
             else:
                 st.session_state["result"] = result
+                st.session_state.setdefault("my_runs", []).append(result.run_id)   # this session's own runs
                 done = result.status == "completed"
                 status.update(label=f"{'Done' if done else result.status.capitalize()} in {result.duration_s:.0f} s",
                               state="complete" if result.status != "failed" else "error", expanded=not done)
 
-# ---------- sidebar: sample briefings (public) / recent briefings (code holders) ----------
-# Drawn after the run, so a code accepted in this run already shows the full list and the new count.
+# ---------- sidebar ----------
+# Demo mode: everyone sees the samples; a code holder also sees the briefings of their own runs in this session,
+# never other visitors' runs. Local dev (demo mode off): all recent briefings.
+# Drawn after the run, so a run that just finished is already listed, with the new count.
+def briefing_buttons(header: str, fetch, empty: str | None) -> list[dict] | None:
+    st.header(header)
+    try:
+        found = fetch()
+    except Exception as exc:
+        st.caption("Couldn't load recent briefings.")
+        view.log.warning("recent_briefings failed: %s", exc)
+        return None
+    if not found and empty:
+        st.caption(empty)
+    for row in found:
+        if st.button(view.briefing_label(row), key=f"saved_{row['id']}", width="stretch"):
+            st.session_state["view"] = {"kind": "saved", "id": row["id"]}
+            st.session_state.pop("result", None)
+    return found
+
+
 rows: list[dict] | None = None
 with st.sidebar:
-    full_list = unlocked()
-    st.header("Recent briefings" if full_list else "Sample briefings")
     if store is None:
+        st.header("Sample briefings" if demo.mode else "Recent briefings")
         st.caption("Briefing history is unavailable (database not reachable). New briefings won't be saved.")
+    elif not demo.mode:
+        rows = briefing_buttons("Recent briefings", lambda: store.recent_briefings(limit=20), "No briefings yet.")
     else:
-        try:
-            rows = store.recent_briefings(limit=20, samples_only=not full_list)
-        except Exception as exc:
-            st.caption("Couldn't load recent briefings.")
-            view.log.warning("recent_briefings failed: %s", exc)
-        if rows == []:
-            st.caption("No briefings yet." if full_list else "No sample briefings yet.")
-        for row in rows or []:
-            if st.button(view.briefing_label(row), key=f"saved_{row['id']}", width="stretch"):
-                st.session_state["view"] = {"kind": "saved", "id": row["id"]}
-                st.session_state.pop("result", None)
-        if demo.mode and full_list and store is not None:
+        my_runs = st.session_state.get("my_runs", [])
+        if my_runs:
+            briefing_buttons("Your briefings", lambda: store.recent_briefings(limit=20, run_ids=my_runs), None)
+        rows = briefing_buttons("Sample briefings", lambda: store.recent_briefings(limit=20, samples_only=True),
+                                "No sample briefings yet.")
+        if unlocked():
             try:
                 st.caption(view.usage_line(store.demo_runs_today(), demo.daily_cap))
             except Exception as exc:
                 view.log.warning("demo_runs_today failed: %s", exc)
+    st.space("large")                         # set apart from the briefing list: it's a reference card, not a briefing
+    with st.container(key="glossary"):
+        with st.expander("Glossary", icon=":material/menu_book:"):
+            st.markdown(view.glossary_markdown())
+
+# The only custom CSS: a light card for the glossary on the navy sidebar (scoped to the container's key class).
+st.html(f"<style>{view.GLOSSARY_CSS}</style>")
 
 # ---------- view ----------
 current = st.session_state.get("view")

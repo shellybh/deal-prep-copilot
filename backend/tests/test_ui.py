@@ -99,10 +99,17 @@ class FakeStore:
         self.rows, self.fail, self.saved = rows or [], fail, {}
         self.used, self.counter_fails, self.claims = used, counter_fails, []
 
-    def recent_briefings(self, limit=20, samples_only=False):
+    def recent_briefings(self, limit=20, samples_only=False, run_ids=None):
         if self.fail:
             raise ConnectionError("db down")
-        return [r for r in self.rows if r.get("is_sample")] if samples_only else self.rows
+        rows = [r for r in self.rows if r.get("is_sample")] if samples_only else self.rows
+        return [r for r in rows if r.get("run_id") in run_ids] if run_ids is not None else rows
+
+    def save_briefing(self, run_id, briefing, markdown, *a):   # list the new run like Supabase would
+        self.rows.insert(0, {"id": f"b-{run_id}", "run_id": run_id, "company": briefing.meta.company,
+                             "language": "en", "meeting_type": "sales", "is_partial": False,
+                             "is_sample": False, "created_at": "2026-11-26T09:00:00+00:00",
+                             "markdown": markdown})
 
     def claim_demo_run(self, cap):
         self.claims.append(cap)
@@ -122,7 +129,6 @@ class FakeStore:
     # RunStore writes (ignored)
     def create_run(self, *a): pass
     def save_stage(self, *a): pass
-    def save_briefing(self, *a): pass
     def save_usage(self, *a): pass
     def finish_run(self, *a): pass
 
@@ -328,8 +334,10 @@ def test_demo_correct_code_runs_once_and_unlocks(app):
     at = submit(at)
     assert not at.exception and calls == ["Acme"] and store.claims == [2]
     assert "# Deal-Prep Briefing: Acme" in all_markdown(at)
-    assert at.sidebar.header[0].value == "Recent briefings"                  # unlocked: full list
-    assert "saved_p1" in [b.key for b in at.sidebar.button]
+    assert [h.value for h in at.sidebar.header] == ["Your briefings", "Sample briefings"]
+    keys = [b.key for b in at.sidebar.button]
+    assert keys[0].startswith("saved_b-") and "saved_s1" in keys             # own run first, then samples
+    assert "saved_p1" not in keys                                             # other people's runs stay hidden
     assert any(c.value.startswith("Live runs today: 1 / 2") for c in at.sidebar.caption)
     at = at.run()                                                             # next interaction:
     assert not at.exception and not [t for t in at.text_input if t.key == "access_code"]   # no re-typing
@@ -337,11 +345,21 @@ def test_demo_correct_code_runs_once_and_unlocks(app):
 
 
 def test_demo_cap_reached_blocks_the_run(app):
-    store = FakeStore(rows=[SAMPLE], used=2)
+    store = FakeStore(rows=[SAMPLE, PRIVATE], used=2)
     at = app(store=store, run=never_run, demo=DEMO_ON).run()
     at.text_input(key="access_code").input(CODE)
     at = submit(at)
     assert not at.exception and [w.value for w in at.warning] == [view.CAP_TEXT]
+    assert [h.value for h in at.sidebar.header] == ["Sample briefings"]      # code holder, no runs yet
+    assert "saved_p1" not in [b.key for b in at.sidebar.button]
+
+
+def test_glossary_in_sidebar(app):
+    assert all(t in view.glossary_markdown() for t in ("**ARR**", "**TCO**", "**MAP**", "CRO"))
+    at = app(store=FakeStore(rows=[SAMPLE]), demo=DEMO_ON).run()
+    assert not at.exception
+    assert at.sidebar.expander[-1].label == "Glossary"
+    assert any("**ARR**" in m.value for m in at.sidebar.markdown)
 
 
 def test_demo_invalid_form_is_not_counted(app):
@@ -375,6 +393,7 @@ def test_demo_mode_off_needs_no_code(app):
     at = submit(app(store=store, run=mocked_run, demo={"DEMO_MODE": "off"}).run())
     assert not at.exception and "# Deal-Prep Briefing: Acme" in all_markdown(at) and store.claims == []
     assert not at.info                                                         # no demo banner locally
+    assert at.sidebar.header[0].value == "Recent briefings"                  # local dev: everything
 
 
 # ---------------------------------------------------------------- mark_sample.py

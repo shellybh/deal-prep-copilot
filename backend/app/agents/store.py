@@ -152,11 +152,15 @@ class SupabaseRunStore:
             .eq("id", run_id).execute()
 
     # ---- reads (Phase 5 "recent briefings", Phase 6 samples) ----
-    def recent_briefings(self, limit: int = 20, samples_only: bool = False) -> list[dict]:
+    def recent_briefings(self, limit: int = 20, samples_only: bool = False,
+                         run_ids: list[str] | None = None) -> list[dict]:
+        """`run_ids`: only briefings of these runs (demo mode: a code holder sees just their own session's runs)."""
         q = self.db.table("briefings").select("id, run_id, company, language, meeting_type, is_partial, "
                                               "is_sample, created_at")
         if samples_only:
             q = q.eq("is_sample", True)
+        if run_ids is not None:
+            q = q.in_("run_id", list(run_ids))
         return q.order("created_at", desc=True).limit(limit).execute().data
 
     def get_briefing(self, briefing_id: str) -> dict | None:

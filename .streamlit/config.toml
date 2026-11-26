@@ -6,6 +6,29 @@ toolbarMode = "minimal"
 [browser]
 gatherUsageStats = false
 
+# Theme: "editorial brief" main area (cream, serif headings, terracotta accent) + navy sidebar.
+# Fonts from Google Fonts, both with Hebrew support (RTL briefings).
 [theme]
 base = "light"
-primaryColor = "#2f5d8a"
+primaryColor = "#C2410C"
+backgroundColor = "#FBF8F3"
+secondaryBackgroundColor = "#F3EDE3"
+textColor = "#1F2937"
+linkColor = "#9A3412"
+borderColor = "#E5DCCD"
+baseRadius = "0.25rem"
+font = "Assistant:https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap, sans-serif"
+headingFont = "Frank Ruhl Libre:https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&display=swap, serif"
+headingFontWeights = [900, 700]
+# st.info is used only for the "Demo scenario" banner: warm terracotta tint instead of the default blue.
+blueColor = "#C2410C"
+blueBackgroundColor = "#F7E6D6"
+blueTextColor = "#7C2D12"
+
+[theme.sidebar]
+backgroundColor = "#0F1E3D"
+secondaryBackgroundColor = "#1B2D52"
+textColor = "#E8EDF6"
+borderColor = "#2C4370"
+primaryColor = "#FB923C"    # lighter terracotta: readable on navy
+linkColor = "#FDBA74"

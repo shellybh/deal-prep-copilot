@@ -192,3 +192,39 @@ def _date(value) -> str:
 
 def sample_caption(row: dict) -> str:
     return f"Sample briefing · generated {_date(row.get('created_at'))} · not updated live"
+
+
+# ---------- glossary (sidebar): sales / finance terms the briefings use without explaining ----------
+
+GLOSSARY: list[tuple[str, str]] = [
+    ("ARR", "Annual Recurring Revenue: yearly revenue from subscriptions."),
+    ("RPO", "Remaining Performance Obligations: contracted revenue not yet recognized."),
+    ("FY / Q1-Q4 / H1", "Fiscal year, its quarters and its first half (a company's own calendar)."),
+    ("CEO / CFO / CTO / CRO", "Chief Executive / Financial / Technology / Revenue Officer."),
+    ("CPTO", "Chief Product and Technology Officer."),
+    ("TCO", "Total Cost of Ownership: license plus setup, operation and staff costs over time."),
+    ("ROI", "Return on Investment."),
+    ("GTM", "Go-to-market: how a product is sold and marketed (channels, partners, sales motion)."),
+    ("POC", "Proof of Concept: a short trial on the customer's own data before buying."),
+    ("MAP", "Mutual Action Plan: steps and dates both sides agree on to close a deal."),
+    ("SLA", "Service Level Agreement: guaranteed uptime and support response times."),
+    ("Enterprise", "The large-customer tier: bigger contracts, longer sales cycles."),
+    ("Churn", "Customers who stop paying or leave."),
+    ("Win-back", "Selling again to a former customer."),
+    ("Battle card", "Internal one-pager on a competitor: strengths, weaknesses, how to answer them."),
+    ("SOC 2 / ISO 27001 / GDPR / HIPAA", "Security and privacy standards and regulations customers ask about."),
+]
+
+
+GLOSSARY_CSS = """
+.st-key-glossary { background: #F7E6D6; border-radius: 0.5rem; }   /* same tint as the Demo scenario banner */
+.st-key-glossary, .st-key-glossary * { color: #7C2D12 !important; }
+.st-key-glossary summary > span { justify-content: center; }                 /* icon + label centered */
+.st-key-glossary summary > span > div { flex: 0 0 auto !important; width: auto !important; }
+.st-key-glossary li, .st-key-glossary li p { font-size: 0.875rem; line-height: 1.45; }
+.st-key-glossary details, .st-key-glossary summary { background: transparent !important; border: none !important; }
+"""
+
+
+def glossary_markdown() -> str:
+    return "\n".join(f"- **{term}**: {meaning}" for term, meaning in GLOSSARY)

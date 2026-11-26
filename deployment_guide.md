@@ -54,7 +54,7 @@ How the public demo of Deal-Prep Copilot is deployed and run (Phase 6, D39 §4).
 
 ## Everyday operations
 
-- **Rotate the access code:** change `DEMO_ACCESS_CODE` in *App settings → Secrets*. The app restarts; sessions that already entered the old code need the new one after the restart.
+- **Any change in Secrets** (rotating `DEMO_ACCESS_CODE`, changing `DEMO_DAILY_CAP`, fixing a key) takes effect only after **Manage app → ⋮ → Reboot app**: saving reruns the script, but the values were already copied into environment variables and the database connection is cached. Sessions that already entered the old code need the new one after the reboot.
 - **Add / remove a sample:** `python mark_sample.py <id>` / `--off` (locally, with the service key in `.env`). No redeploy needed. Don't mark a briefing that shows "Written by the fallback model" (written by flash-lite after a 503).
 - **See today's count:** the sidebar line for code holders, or in Supabase: `select * from demo_usage order by day desc;`
 - **Reset today's count** (e.g. after testing): `update demo_usage set runs = 0 where day = public.demo_day();`

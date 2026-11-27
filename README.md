@@ -6,11 +6,11 @@ An AI research assistant for B2B meetings. You give it a company name and the me
 
 **Live demo:** [deal-prep-copilot.streamlit.app](https://deal-prep-copilot.streamlit.app/). Sample briefings open without an access code. Live runs need one (ask me), because the demo runs on free-tier quotas.
 
-**1-minute video:** [a narrated walkthrough](docs/video/deal-prep-copilot-demo.mp4) (MP4, 3 MB): a live run, an English and a Hebrew briefing, and the architecture.
-
+**1-minute video** (narrated walkthrough: a live run, an English and a Hebrew briefing, and the architecture):
 
 https://github.com/user-attachments/assets/fb1dc1e1-28fb-47b4-8f5e-72aecbc0eefa
 
+[Download the MP4](docs/video/deal-prep-copilot-demo.mp4) (3 MB) if the player doesn't load.
 
 
 ![Browsing the sample briefings: English, then Hebrew (right-to-left), then the glossary](docs/images/demo.gif)

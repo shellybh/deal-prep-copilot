@@ -259,18 +259,19 @@ def build_graph(run: Run):
     def node_write(state: RunState) -> RunState:
         reg = state["ctx"].registry
         if run.stages["strategic_analysis"].detail == DAILY_QUOTA_MSG:
-            # the writer uses the same model: another call would only be a second daily-quota 429
-            run.set_stage("briefing_writing", "failed", DAILY_QUOTA_MSG)
-            run.set_stage("quality_checks", "skipped", "no briefing to check")
-            return {"written": None, "briefing": None}
-        ok, val = run.attempt("briefing_writing", deps.llm_attempts,
-                              lambda: write(reg, req, state.get("analysis"), deps.strong(), run.usage,
-                                            run.research_date))
-        fallback = None
-        if not ok and deps.writer_fallback and is_overloaded(val or ""):
-            # Google-side overload, not quota: the small model (separate, much larger daily limit) writes instead
-            # of losing the research + analysis already paid for (2026-11-24: 4 of 6 runs hit 503 on flash).
-            log.warning("writer overloaded on the strong model, trying the fallback model once")
+            # the writer uses the same model: another strong call would only be a second daily-quota 429
+            ok, val = False, DAILY_QUOTA_MSG
+        else:
+            ok, val = run.attempt("briefing_writing", deps.llm_attempts,
+                                  lambda: write(reg, req, state.get("analysis"), deps.strong(), run.usage,
+                                                run.research_date))
+        fallback, reason = None, None
+        if not ok and deps.writer_fallback and (is_overloaded(val or "") or val == DAILY_QUOTA_MSG):
+            # Strong model overloaded (503) or out of its daily quota: the small model (separate, much larger daily
+            # limit) writes instead of losing the research already paid for (2026-11-24: 4 of 6 runs hit 503 on
+            # flash; rejected requests count toward the 20/day quota, so a 429 can follow a run of 503s).
+            reason = "main model's daily quota reached" if val == DAILY_QUOTA_MSG else "main model overloaded"
+            log.warning("writer: %s, trying the fallback model once", reason)
             ok, val = run.attempt("briefing_writing", 1,
                                   lambda: write(reg, req, state.get("analysis"), deps.small(), run.usage,
                                                 run.research_date))
@@ -283,7 +284,7 @@ def build_graph(run: Run):
         briefing.meta.company = display_name(req.company, val.company_name)
         briefing.meta.fallback_writer = fallback
         run.set_stage("briefing_writing", "completed",
-                      f"written by the fallback model {fallback} (main model overloaded)" if fallback else None)
+                      f"written by the fallback model {fallback} ({reason})" if fallback else None)
         return {"written": val, "briefing": briefing}
 
     def route_after_write(state: RunState) -> str:

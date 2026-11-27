@@ -667,7 +667,7 @@ def test_join_reasons_makes_sentences_and_drops_repeats():
 
 def test_daily_quota_is_not_retried():
     quota = RuntimeError("429 RESOURCE_EXHAUSTED quotaId GenerateRequestsPerDayPerProjectPerModel-FreeTier")
-    deps = make_deps(structured=[quota, good_writer()])
+    deps = make_deps(structured=[quota, good_writer()], writer_fallback=False)
     r = run_research(REQ, deps)
     st = {s.stage: s for s in r.stages}
     assert st["strategic_analysis"].status == "failed" and st["strategic_analysis"].attempts == 1
@@ -679,6 +679,37 @@ def test_daily_quota_is_not_retried():
     assert len(deps.strong_llm.structured) == 1          # good_writer() was never requested
     assert r.status == "failed" and r.briefing is None
     assert "daily free-tier quota" in r.error
+
+
+QUOTA = RuntimeError("429 RESOURCE_EXHAUSTED quotaId GenerateRequestsPerDayPerProjectPerModel-FreeTier")
+
+
+def test_analysis_quota_goes_straight_to_fallback_writer():
+    # analysis hit the strong model's daily quota: no second strong call, the small model writes a partial briefing
+    deps = make_deps(structured=[QUOTA, good_writer()],
+                     judge=[good_writer(), GenericVerdict(), GenericVerdict()])
+    r = run_research(REQ, deps)
+    st = {s.stage: s for s in r.stages}
+    assert len(deps.strong_llm.structured) == 1          # good_writer() on the strong model never requested
+    assert st["strategic_analysis"].status == "failed"
+    assert st["briefing_writing"].status == "completed" and st["briefing_writing"].attempts == 1
+    assert "fallback model fake-small (main model's daily quota reached)" in st["briefing_writing"].detail
+    assert r.status == "partial" and r.briefing.meta.fallback_writer == "fake-small"
+    assert "Written by the fallback model (fake-small)" in r.markdown and "daily quota" in r.markdown
+
+
+def test_writer_quota_falls_back_once_without_retry():
+    deps = make_deps(structured=[good_analysis(), QUOTA, good_writer()],
+                     judge=[good_writer(), GenericVerdict(), GenericVerdict()])
+    r = run_research(REQ, deps)
+    st = {s.stage: s for s in r.stages}
+    assert len(deps.strong_llm.structured) == 1          # one writer call on the strong model, no retry after 429
+    assert r.status == "completed" and r.briefing.meta.fallback_writer == "fake-small"
+    assert "daily quota reached" in st["briefing_writing"].detail
+    # fallback fails too: failed, no briefing
+    deps = make_deps(structured=[good_analysis(), QUOTA], judge=[QUOTA])
+    r = run_research(REQ, deps)
+    assert r.status == "failed" and r.briefing is None
 
 
 def test_strong_model_has_no_hidden_sdk_retries(monkeypatch):

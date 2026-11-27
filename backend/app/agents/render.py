@@ -32,7 +32,8 @@ TEXT = {
            "meeting": "Meeting", "goal": "Goal", "languages": "Search languages", "website": "Website",
            "partial": "Partial briefing: some research stages failed ({stages}). Sections that depend on them "
                       "may be incomplete.",
-           "fallback": "Written by the fallback model ({model}) because the main model was overloaded. "
+           "fallback": "Written by the fallback model ({model}) because the main model was unavailable "
+                       "(overloaded or out of its daily quota). "
                        "Wording may be less polished; facts and citations follow the same checks.",
            "ai_analysis": "AI analysis", "ai_recommendation": "recommendation", "unverified": "unverified",
            "user_provided": "user-provided", "low": "low confidence", "conflict": "sources disagree",
@@ -44,7 +45,7 @@ TEXT = {
            "sources": "מקורות", "missing": "חסר מידע", "date": "תאריך המחקר", "depth": "עומק",
            "meeting": "פגישה", "goal": "מטרה", "languages": "שפות החיפוש", "website": "אתר",
            "partial": "תדריך חלקי: חלק משלבי המחקר נכשלו ({stages}). ייתכן שסעיפים שתלויים בהם חסרים.",
-           "fallback": "נכתב במודל הגיבוי ({model}) כי המודל הראשי היה עמוס. הניסוח עשוי להיות פחות מלוטש; "
+           "fallback": "נכתב במודל הגיבוי ({model}) כי המודל הראשי לא היה זמין (עומס או מכסה יומית). הניסוח עשוי להיות פחות מלוטש; "
                        "העובדות והציטוטים עוברים את אותן בדיקות.",
            "ai_analysis": "ניתוח AI", "ai_recommendation": "המלצה", "unverified": "לא מאומת",
            "user_provided": "מידע מהמשתמש", "low": "ודאות נמוכה", "conflict": "המקורות סותרים",

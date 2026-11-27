@@ -272,7 +272,7 @@ class BriefingMeta(BaseModel):
     models: dict[str, str] = Field(default_factory=dict)
     is_partial: bool = False
     incomplete_stages: list[str] = Field(default_factory=list)
-    # set when the strong model was overloaded (503) and the small model wrote the briefing (fallback writer)
+    # set when the strong model was overloaded (503) or out of its daily quota and the small model wrote the briefing
     fallback_writer: str | None = None
     user_context: str | None = None
     user_context_type: ContextType | None = None

@@ -55,7 +55,7 @@ How the public demo of Deal-Prep Copilot is deployed and run (Phase 6, D39 §4).
 ## Everyday operations
 
 - **Any change in Secrets** (rotating `DEMO_ACCESS_CODE`, changing `DEMO_DAILY_CAP`, fixing a key) takes effect only after **Manage app → ⋮ → Reboot app**: saving reruns the script, but the values were already copied into environment variables and the database connection is cached. Sessions that already entered the old code need the new one after the reboot.
-- **Add / remove a sample:** `python mark_sample.py <id>` / `--off` (locally, with the service key in `.env`). No redeploy needed. Don't mark a briefing that shows "Written by the fallback model" (written by flash-lite after a 503).
+- **Add / remove a sample:** `python mark_sample.py <id>` / `--off` (locally, with the service key in `.env`). No redeploy needed. Don't mark a briefing that shows "Written by the fallback model" (written by flash-lite after a 503 or flash's daily quota).
 - **See today's count:** the sidebar line for code holders, or in Supabase: `select * from demo_usage order by day desc;`
 - **Reset today's count** (e.g. after testing): `update demo_usage set runs = 0 where day = public.demo_day();`
 - **Sleep:** free apps sleep after a period without visitors; the first visit wakes them (about a minute).
@@ -66,7 +66,7 @@ How the public demo of Deal-Prep Copilot is deployed and run (Phase 6, D39 §4).
 | Symptom | Cause / fix |
 |---|---|
 | "The daily model quota (Gemini free tier) is used up" | 20 flash requests per model per day. Wait for 10:00 Israel time, or lower `DEMO_DAILY_CAP`. The log line `daily quota details:` has the quota ID and retry delay. |
-| "Written by the fallback model" above a briefing | Flash was overloaded (`503 UNAVAILABLE`, Google-side); the small model wrote it. Normal; try again later for the usual wording. |
+| "Written by the fallback model" above a briefing | Flash was overloaded (`503 UNAVAILABLE`, Google-side) or out of its daily quota; the small model wrote it (the run's stage detail says which). Normal; try again later (after 10:00 Israel time for the quota) for the usual wording. |
 | "Live research runs are turned off on this deployment" | `DEMO_ACCESS_CODE` is missing in Secrets. |
 | "Live runs are unavailable right now (the usage counter can't be reached)" | Supabase unreachable, or the `demo_usage` migration isn't applied. |
 | Sidebar: "Briefing history is unavailable" | `SUPABASE_URL` / `SUPABASE_KEY` / `SUPABASE_ANON_KEY` missing or wrong in Secrets. |

@@ -55,7 +55,7 @@ flowchart TB
         R --> C{Complete?}
         C -- "searches missing" --> X[Extra round] --> C
         C -- yes --> A[Analysis]
-        A --> W[Writer<br/>fallback: small model on 503]
+        A --> W[Writer<br/>fallback: small model on 503 / quota]
         W --> Q[Quality checks<br/>+ generic judge]
     end
 
@@ -101,7 +101,7 @@ Everything runs on free tiers with no credit card. The tightest limit is Gemini 
   - the research tool loop runs on flash-lite (500 requests per day)
   - only analysis and writing use flash, so a run needs about 2 flash calls
   - a daily-quota 429 is not retried, and the SDK's silent retries are turned off for flash
-- **Fallback writer:** if flash returns 503 "high demand" on every writing attempt, the writer tries once on flash-lite. The briefing then says it was written by the fallback model, instead of losing the research already paid for.
+- **Fallback writer:** if flash returns 503 "high demand" on every writing attempt, or has used up its daily quota, the writer tries once on flash-lite. The briefing then says it was written by the fallback model, instead of losing the research already paid for.
 - **Public demo mode (D39):**
   - visitors read pre-generated sample briefings, which costs nothing
   - a live run needs an access code
@@ -156,6 +156,8 @@ Every briefing is written from NexaStream's point of view. The external research
 - **Hebrew wording** has occasional typos.
 - **The competitor section** sometimes lists our own competitors even when the target company has no link to them.
 - **Two request fields** (`compare_with` and `focus`) are accepted but not used by the agents yet.
+- **The extra research round is covered by unit tests only:** in every live run so far the first round already met the completeness criteria, so the extra round never triggered.
+- **If both flash and the flash-lite fallback fail at the writing step**, the run ends as failed with no briefing shown. The research is saved in the database, but the UI doesn't show a partial briefing for this case. (If analysis fails, the UI does show a partial briefing.)
 - **The retrieval eval is saturated:** 18 queries, written from the same documents they search (hybrid scores 1.0 on every metric). It catches regressions but doesn't show real-world recall; a harder, independently written query set is future work.
 
 ## Future work

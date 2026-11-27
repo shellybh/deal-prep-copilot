@@ -312,6 +312,17 @@ def test_demo_public_view_samples_only_and_newest_sample_shown(app):
     assert at.text_input(key="access_code") is not None
 
 
+def test_first_sample_prefers_newest_english(app):
+    he = {**SAMPLE, "id": "h1", "company": "monday.com", "language": "he", "created_at": "2026-11-27T09:00:00+00:00",
+          "markdown": "# תדריך: monday.com\n\n- שורת דוגמה\n"}
+    assert view.first_sample([he, SAMPLE])["id"] == "s1"
+    assert view.first_sample([he])["id"] == "h1"                              # no English sample: the newest
+    at = app(store=FakeStore(rows=[he, SAMPLE]), run=never_run, demo=DEMO_ON).run()
+    assert not at.exception
+    assert any("sample line" in m.value for m in at.markdown)                 # the English one opens first
+    assert not any("שורת דוגמה" in m.value for m in at.markdown)
+
+
 def test_demo_no_or_wrong_code_runs_nothing(app):
     store = FakeStore(rows=[SAMPLE])
     at = submit(app(store=store, run=never_run, demo=DEMO_ON).run())

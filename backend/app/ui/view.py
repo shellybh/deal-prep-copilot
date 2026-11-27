@@ -190,6 +190,12 @@ def _date(value) -> str:
         return str(value or "")[:10]
 
 
+def first_sample(rows: list[dict]) -> dict:
+    """The sample shown on a visitor's first screen: the newest English one (most visitors read English),
+    else the newest. `rows` are newest first."""
+    return next((r for r in rows if r.get("language") == "en"), rows[0])
+
+
 def sample_caption(row: dict) -> str:
     return f"Sample briefing · generated {_date(row.get('created_at'))} · not updated live"
 

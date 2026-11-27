@@ -12,7 +12,7 @@ How the public demo of Deal-Prep Copilot is deployed and run (Phase 6, D39 §4).
 
 | Visitor | What they can do | Quota used |
 |---|---|---|
-| No access code | Read the sample briefings (`briefings.is_sample = true`) in the sidebar; the newest one opens on the first screen | none |
+| No access code | Read the sample briefings (`briefings.is_sample = true`) in the sidebar; the newest English one opens on the first screen | none |
 | With the access code | Run a live research run, see the briefings from their own session | ~2 Gemini flash calls + up to 20 Tavily credits (Standard depth, D37) per run |
 
 - **Access code:** `DEMO_ACCESS_CODE`. Compared in constant time, kept for the browser session after one correct entry.

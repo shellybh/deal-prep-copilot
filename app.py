@@ -227,7 +227,7 @@ st.html(f"<style>{view.GLOSSARY_CSS}</style>")
 # ---------- view ----------
 current = st.session_state.get("view")
 if current is None and not submitted and rows and demo.mode and not unlocked():
-    current = {"kind": "saved", "id": rows[0]["id"]}       # first visit: show the newest sample at once
+    current = {"kind": "saved", "id": view.first_sample(rows)["id"]}   # first visit: newest English sample
 current = current or {}
 if current.get("kind") == "new" and "result" in st.session_state:
     r = st.session_state["result"]

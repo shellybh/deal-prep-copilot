@@ -162,7 +162,8 @@ if submitted:
                 stages[s.stage] = s
                 box.markdown(view.stage_lines(stages.values()))
                 if s.status == "in_progress":
-                    status.update(label=f"{view.stage_label(s.stage)}…")
+                    # expanded=True each time: a label-only update collapses the box (Streamlit 1.67)
+                    status.update(label=f"{view.stage_label(s.stage)}…", expanded=True)
 
             try:
                 result = orchestrator.run_research(request, Deps(store=store or MemoryRunStore()),

@@ -185,6 +185,22 @@ def test_app_completed_run_shows_progress_and_briefing(app):
     assert any("LLM calls" in c.value for c in at.caption)
 
 
+def test_progress_box_stays_open_while_running(app, monkeypatch):
+    # Streamlit 1.67: update(label=...) without `expanded` re-sends the box with the field cleared and the browser
+    # collapses it, so the stage list was hidden during live runs (2026-11-27). Every update must say expanded.
+    from streamlit.elements.lib.mutable_status_container import StatusContainer
+    calls, real = [], StatusContainer.update
+
+    def spy(self, **kw):
+        calls.append(kw)
+        return real(self, **kw)
+    monkeypatch.setattr(StatusContainer, "update", spy)
+    at = submit(app(run=mocked_run).run())
+    assert not at.exception
+    running = [c for c in calls if c.get("state") is None]                   # stage-label updates during the run
+    assert running and all(c.get("expanded") is True for c in running)
+
+
 def test_app_hebrew_briefing_is_rtl(app):
     at = submit(app(run=mocked_run).run(), language="he")
     assert not at.exception

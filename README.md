@@ -6,6 +6,8 @@ An AI research assistant for B2B meetings. You give it a company name and the me
 
 **Live demo:** [deal-prep-copilot.streamlit.app](https://deal-prep-copilot.streamlit.app/). Sample briefings open without an access code. Live runs need one (ask me), because the demo runs on free-tier quotas.
 
+**1-minute video:** [a narrated walkthrough](docs/video/deal-prep-copilot-demo.mp4) (MP4, 3 MB): a live run, an English and a Hebrew briefing, and the architecture.
+
 ![Browsing the sample briefings: English, then Hebrew (right-to-left), then the glossary](docs/images/demo.gif)
 
 > **Where it started.** This began as a demo project in an AI developer course. The course supplied the initial idea, the initial prompt, and the demo dataset: NexaStream's internal documents, the competitor battle cards and the CRM export. I designed and wrote the architecture, the agents, the research and RAG pipelines, the evaluation, the demo mode and all the decisions in [`DECISIONS.md`](DECISIONS.md).
@@ -34,6 +36,10 @@ The briefing labels every item: fact, internal document, user-provided, AI analy
 **The form and the sample briefings.** Visitors without an access code see the samples; a code holder also sees the briefings from their own session.
 
 ![The home page: meeting form, demo scenario and the sample briefings in the sidebar](docs/images/home.png)
+
+**A live run in progress.** Each stage reports what it found as it finishes: sources, Tavily credits, research rounds and internal excerpts.
+
+![A live run: identification, web, competitor and internal research done, strategic analysis running](docs/images/progress.png)
 
 **An English briefing.** A one-page summary, then the 12-section appendix. Every line ends with its sources, and analysis is labeled as such.
 

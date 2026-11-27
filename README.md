@@ -8,6 +8,11 @@ An AI research assistant for B2B meetings. You give it a company name and the me
 
 **1-minute video:** [a narrated walkthrough](docs/video/deal-prep-copilot-demo.mp4) (MP4, 3 MB): a live run, an English and a Hebrew briefing, and the architecture.
 
+
+https://github.com/user-attachments/assets/fb1dc1e1-28fb-47b4-8f5e-72aecbc0eefa
+
+
+
 ![Browsing the sample briefings: English, then Hebrew (right-to-left), then the glossary](docs/images/demo.gif)
 
 > **Where it started.** This began as a demo project in an AI developer course. The course supplied the initial idea, the initial prompt, and the demo dataset: NexaStream's internal documents, the competitor battle cards and the CRM export. I designed and wrote the architecture, the agents, the research and RAG pipelines, the evaluation, the demo mode and all the decisions in [`DECISIONS.md`](DECISIONS.md).
